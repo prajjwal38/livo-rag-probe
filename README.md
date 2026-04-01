@@ -1,5 +1,5 @@
 # livo-rag-probe
-
+Evaluation report for Golden dataset quality.
 ## What this is
 A RAG pipeline over 4 ML/AI video transcripts (English + Hinglish).  
 Built to test **retrieval quality**, not just retrieval speed.
