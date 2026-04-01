@@ -1,0 +1,192 @@
+[
+  {
+    "text": "The initials GPT stand for Generative Pre-trained Transformer. Generative refers to bots that generate new text. Pre-trained refers to how the model learned from a massive amount of data. A transformer is a specific kind of neural network, a machine learning model, and it's the core invention underlying the current boom in AI. There are many different kinds of models you can build using transformers. Some take audio and produce a transcript; some produce synthetic speech from text. Tools like DALL-E and Midjourney take text and produce an image. The variant we focus on is the type that underlies ChatGPT, a model trained to take a piece of text and produce a prediction for what comes next in the passage. That prediction takes the form of a probability distribution over many different chunks of text that might follow.",
+    "video_id": "kn6S7X98p9Q",
+    "title": "But what is a GPT? Visual intro to Transformers | Chapter 1, Deep Learning",
+    "channel": "3Blue1Brown",
+    "language": "English",
+    "youtube_url": "https://www.youtube.com/watch?v=kn6S7X98p9Q",
+    "topic_summary": "Definition and Types of GPT Models",
+    "key_entities": [
+      "GPT",
+      "Generative Pre-trained Transformer",
+      "Neural Network",
+      "AI",
+      "DALL-E",
+      "ChatGPT"
+    ],
+    "timestamp": "00:00",
+    "start_ms": "0",
+    "end_ms": "104000"
+  },
+  {
+    "text": "Writing long passages seems to involve more foresight than single-word prediction can provide. But once you have a prediction model, you can make it generate longer text by giving it an initial snippet, taking a random sample from the distribution it generates, appending that sample to the text, and running the whole process again to make a new prediction. In this animation, we see GPT-2 running on a laptop, and it doesn't really make that much sense. But if we swap it for GPT-3, which is the same basic model but much bigger, suddenly we do get a sensible story. This process of repeated prediction and sampling is essentially what's happening when you interact with ChatGPT. Seeing the underlying probability distributions would represent the model's understanding of language and its ability to predict the next word based on previous words.",
+    "video_id": "kn6S7X98p9Q",
+    "title": "But what is a GPT? Visual intro to Transformers | Chapter 1, Deep Learning",
+    "channel": "3Blue1Brown",
+    "language": "English",
+    "youtube_url": "https://www.youtube.com/watch?v=kn6S7X98p9Q",
+    "topic_summary": "Autoregressive Generation Mechanics",
+    "key_entities": [
+      "GPT-2",
+      "GPT-3",
+      "Probability Distribution",
+      "Autoregressive",
+      "Sampling"
+    ],
+    "timestamp": "01:44",
+    "start_ms": "104000",
+    "end_ms": "183000"
+  },
+  {
+    "text": "When one of these chatbots generates a word, here is what is going on under the hood. First, the input is broken into tokens—words or pieces of words. Each token is associated with a vector—a list of numbers—meant to encode meaning. Words with similar meanings tend to land on vectors close to each other in space. This sequence passes through an attention block, allowing vectors to talk to each other to update their values based on context. For example, 'model' in 'machine learning model' vs 'fashion model' has different contexts. After that, they pass through a multilayer perceptron (MLP), where vectors are updated based on a long list of questions. All operations look like a giant pile of matrix multiplications. This repeats many times until the essential meaning is baked into the last vector in the sequence to produce a probability distribution over all possible next tokens.",
+    "video_id": "kn6S7X98p9Q",
+    "title": "But what is a GPT? Visual intro to Transformers | Chapter 1, Deep Learning",
+    "channel": "3Blue1Brown",
+    "language": "English",
+    "youtube_url": "https://www.youtube.com/watch?v=kn6S7X98p9Q",
+    "topic_summary": "Transformer Architecture Overview",
+    "key_entities": [
+      "Tokens",
+      "Vectors",
+      "Attention block",
+      "Multilayer Perceptron",
+      "MLP",
+      "Matrix Multiplication"
+    ],
+    "timestamp": "03:03",
+    "start_ms": "183000",
+    "end_ms": "313000"
+  },
+  {
+    "text": "Deep learning is one approach to machine learning, where data determines how a model behaves. Rather than explicitly defining a procedure in code, you set up a flexible structure with tunable parameters—knobs and dials. You use many examples of what output should look like for a given input to tune the values of those parameters to mimic this behavior. The simplest form is linear regression, predicting house prices based on square footage using slope and intercept parameters. Deep learning models get much more complicated; GPT-3 has 175 billion parameters. These parameters are referred to as weights because the only way they interact with data is through weighted sums. Typically, these are packaged as matrix-vector products. We should draw a sharp distinction between the weights (the brains learned during training) and the data being processed, which simply encodes the specific input.",
+    "video_id": "kn6S7X98p9Q",
+    "title": "But what is a GPT? Visual intro to Transformers | Chapter 1, Deep Learning",
+    "channel": "3Blue1Brown",
+    "language": "English",
+    "youtube_url": "https://www.youtube.com/watch?v=kn6S7X98p9Q",
+    "topic_summary": "Deep Learning and Weights",
+    "key_entities": [
+      "Deep Learning",
+      "Machine Learning",
+      "Linear Regression",
+      "Weights",
+      "Parameters"
+    ],
+    "timestamp": "05:13",
+    "start_ms": "313000",
+    "end_ms": "532000"
+  },
+  {
+    "text": "GPT-3's 175 billion weights are organized into just under 28,000 distinct matrices. These matrices fall into eight different categories: Embedding, Key, Query, Value, Output, Up-projection, Down-projection, and Unembedding. Breaking these down helps us count where those 175 billion parameters come from. The first matrix we encounter is the embedding matrix, which has a column for each word in the vocabulary. Vocabulary size is about 50,257 tokens, and the embedding dimension is 12,288. Multiplying those tells us it consists of about 617 million weights. In transformers, vectors in the embedding space encode information about position and have the capacity to soak up context from the surroundings, allowing the vector to point in a much more specific and nuanced direction through the network blocks.",
+    "video_id": "kn6S7X98p9Q",
+    "title": "But what is a GPT? Visual intro to Transformers | Chapter 1, Deep Learning",
+    "channel": "3Blue1Brown",
+    "language": "English",
+    "youtube_url": "https://www.youtube.com/watch?v=kn6S7X98p9Q",
+    "topic_summary": "GPT-3 Scale and Weight Categorization",
+    "key_entities": [
+      "GPT-3",
+      "Embedding Matrix",
+      "Vocabulary",
+      "Parameters",
+      "Weights"
+    ],
+    "timestamp": "08:53",
+    "start_ms": "533000",
+    "end_ms": "671000"
+  },
+  {
+    "text": "Word embedding vectors land in some very high-dimensional space. In GPT-3, they have 12,288 dimensions. Working in a space with many distinct directions matters. As a model tunes its weights during training, it settles on embeddings where directions in space have semantic meaning. For example, a search for words with embeddings closest to 'tower' gives words with similar vibes like gate, building, or skyscraper. Directions can carry semantic meaning; if you take the difference between the vectors for 'woman' and 'man', it's very similar to the difference between 'king' and 'queen'. You could find the word for a female monarch by taking 'king' and adding the 'woman minus man' direction. Similar examples include family relations like 'aunt' and 'uncle' or even foods like sushi and bratwurst.",
+    "video_id": "kn6S7X98p9Q",
+    "title": "But what is a GPT? Visual intro to Transformers | Chapter 1, Deep Learning",
+    "channel": "3Blue1Brown",
+    "language": "English",
+    "youtube_url": "https://www.youtube.com/watch?v=kn6S7X98p9Q",
+    "topic_summary": "Embedding Space and Vector Geometry",
+    "key_entities": [
+      "Embeddings",
+      "High-dimensional space",
+      "Semantic meaning",
+      "Vector subtraction"
+    ],
+    "timestamp": "11:12",
+    "start_ms": "672000",
+    "end_ms": "814000"
+  },
+  {
+    "text": "A helpful piece of mathematical intuition is how the dot product of two vectors measures how well they align. Computationally, dot products involve multiplying corresponding components and adding the results. Geometrically, it's positive when vectors point in similar directions, zero if perpendicular, and negative if opposite. For instance, if you hypothesize an embedding direction for 'plurality' by subtracting 'cat' from 'cats', you can test it with dot products against other nouns. Plural nouns like 'puppies' or 'octopi' consistently give higher values than singular ones like 'puppy' or 'octopus'. You can even quantitatively measure how plural the model finds a word. This embedding matrix is the first pile of weights in the model, consisting of about 617 million parameters learned through data.",
+    "video_id": "kn6S7X98p9Q",
+    "title": "But what is a GPT? Visual intro to Transformers | Chapter 1, Deep Learning",
+    "channel": "3Blue1Brown",
+    "language": "English",
+    "youtube_url": "https://www.youtube.com/watch?v=kn6S7X98p9Q",
+    "topic_summary": "Dot Products and Plurality Testing",
+    "key_entities": [
+      "Dot Product",
+      "Vector alignment",
+      "Embedding Direction",
+      "Plurality"
+    ],
+    "timestamp": "13:35",
+    "start_ms": "815000",
+    "end_ms": "956000"
+  },
+  {
+    "text": "At the end of the network, the desired output is a probability distribution over all tokens. If the context is 'Harry Potter was a highly unusual boy... least favorite teacher, Professor', a well-trained network should assign a high number to 'Snape'. This involves two steps. First, an unembedding matrix maps the last vector in the context to a list of 50,257 values—one for each token in the vocabulary. This matrix has one row for each word, adding another 617 million parameters. So far, our count is over a billion weights. The raw, unnormalized output values are called logits. We then use a function called softmax to normalize these logits into a valid probability distribution where each value is between 0 and 1 and they all add up to 1.",
+    "video_id": "kn6S7X98p9Q",
+    "title": "But what is a GPT? Visual intro to Transformers | Chapter 1, Deep Learning",
+    "channel": "3Blue1Brown",
+    "language": "English",
+    "youtube_url": "https://www.youtube.com/watch?v=kn6S7X98p9Q",
+    "topic_summary": "Unembedding and Logits",
+    "key_entities": [
+      "Unembedding matrix",
+      "Logits",
+      "Softmax",
+      "Probability Distribution",
+      "Harry Potter"
+    ],
+    "timestamp": "15:57",
+    "start_ms": "957000",
+    "end_ms": "1104000"
+  },
+  {
+    "text": "The transformer can only process a fixed number of vectors at a time, known as its context size. For GPT-3, it was trained with a context size of 2,048 tokens. This limits how much text the model can incorporate when making a prediction. The primary goal of the network blocks like attention is to enable each vector to soak up a meaning that is much more rich and specific than what mere individual words could represent initially. Initially, each vector is just plucked from the embedding matrix and only encodes the meaning of a single word. Through the repeating layers of attention and multilayer perceptrons, the network integrates information from the surrounding context into those vectors, allowing for sophisticated language understanding and accurate next-word prediction.",
+    "video_id": "kn6S7X98p9Q",
+    "title": "But what is a GPT? Visual intro to Transformers | Chapter 1, Deep Learning",
+    "channel": "3Blue1Brown",
+    "language": "English",
+    "youtube_url": "https://www.youtube.com/watch?v=kn6S7X98p9Q",
+    "topic_summary": "Context Size and Attention Goals",
+    "key_entities": [
+      "Context Size",
+      "Attention",
+      "MLP",
+      "Network Blocks",
+      "GPT-3"
+    ],
+    "timestamp": "18:25",
+    "start_ms": "1105000",
+    "end_ms": "1222000"
+  },
+  {
+    "text": "The softmax function turns an arbitrary list of numbers into a valid probability distribution. Softmax ensures the largest values end up close to one and smaller values close to zero by raising 'e' to the power of each number and dividing by the total sum. Adjusting the temperature constant 'T' in the denominator of those exponents allows for variation. When 'T' is larger, the distribution is more uniform, giving more weight to lower values and allowing for less likely word choices. Smaller 'T' makes bigger values dominate more aggressively. At temperature zero, all weight goes to the maximum value, leading to the most predictable text. A higher temperature might start originally but risks nonsense, while temperature zero might feel trite but stays predictable.",
+    "video_id": "kn6S7X98p9Q",
+    "title": "But what is a GPT? Visual intro to Transformers | Chapter 1, Deep Learning",
+    "channel": "3Blue1Brown",
+    "language": "English",
+    "youtube_url": "https://www.youtube.com/watch?v=kn6S7X98p9Q",
+    "topic_summary": "Softmax and Temperature Control",
+    "key_entities": [
+      "Softmax",
+      "Temperature",
+      "Logits",
+      "Probability Distribution",
+      "Exponential function"
+    ],
+    "timestamp": "20:23",
+    "start_ms": "1223000",
+    "end_ms": "1634000"
+  }
+]

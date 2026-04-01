@@ -1,0 +1,23 @@
+# Core Pipeline
+yt-dlp
+assemblyai
+
+# Embeddings (Local)
+sentence-transformers
+torch
+
+# Vector DB
+chromadb
+
+# BM25 Keyword Search
+rank_bm25
+
+# Reranker (Local)
+transformers
+
+# Text Splitting
+langchain-text-splitters
+
+# Utilities
+python-dotenv
+numpy

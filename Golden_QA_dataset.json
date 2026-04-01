@@ -1,0 +1,93 @@
+[
+  {
+    "id": "q1_attention_contextual_disambiguation",
+    "question": "According to the video's explanation of a transformer's architecture, how does the \"attention block\" specifically differentiate the word \"model\" in the phrases \"machine learning model\" and \"fashion model\"?",
+    "expected_answer": "Before the attention block, each token's vector is a fixed lookup from the embedding matrix — it only encodes the isolated meaning of that one word. The attention block then allows the sequence of vectors to 'talk to each other,' updating each vector's values based on the surrounding context. This is how the vector for 'model' gets updated differently depending on whether 'machine learning' or 'fashion' precedes it. This process repeats many times across layers until the essential, context-rich meaning is baked into each vector.",
+    "expected_video_id": null,
+    "expected_timestamp_hint": "video_2 @ ~03:03",
+    "is_irrelevant": false,
+    "wrong_retrieval_description": "A chunk explaining static word embeddings, which would incorrectly imply the word 'model' just gets a fixed vector based on its isolated meaning, missing the attention-based contextual update mechanism entirely."
+  },
+  {
+    "id": "q2_attention_vs_mlp_contrast",
+    "question": "In the context of data flowing through a transformer, how does the operation of a Multilayer Perceptron (MLP) block contrast with that of an Attention block?",
+    "expected_answer": "In an attention block, vectors in the sequence 'talk to each other' — passing contextual information between tokens to update their values. In a Multilayer Perceptron block, vectors do not interact with each other at all. Instead, each vector independently goes through the same parallel operation, which is likened to running through a long list of questions. Both operations, under the hood, look like 'a giant pile of matrix multiplications.'",
+    "expected_video_id": null,
+    "expected_timestamp_hint": "video_2 @ ~03:03",
+    "is_irrelevant": false,
+    "wrong_retrieval_description": "A chunk solely describing the attention block in isolation, which would incorrectly answer that all transformer operations involve vectors passing information to each other."
+  },
+  {
+    "id": "q3_autoregressive_generation_loop",
+    "question": "How does a text-generating transformer use single-word prediction to output a longer cohesive passage of text, according to the video's step-by-step breakdown?",
+    "expected_answer": "The model takes an initial snippet of text, produces a probability distribution for the next token, takes a random sample from that distribution, appends the sampled word to the original text, and then repeats the entire process to make a new prediction based on the newly extended text. The video demonstrates this with GPT-2 producing incoherent output and GPT-3 producing a sensible story, showing that the same 'sample and append' loop powers systems like ChatGPT.",
+    "expected_video_id": null,
+    "expected_timestamp_hint": "video_2 @ ~01:44",
+    "is_irrelevant": false,
+    "wrong_retrieval_description": "A chunk explaining how standard classification models work, which would fail to explain the autoregressive 'sample and append' loop required for generating sequences."
+  },
+  {
+    "id": "q4_system_prompt_missing_evidence",
+    "question": "How do you turn a basic word-predicting transformer into a chatbot, using what the video describes as a \"system prompt\"?",
+    "expected_answer": "UNVERIFIABLE — No supporting transcript chunk was provided for this QA pair. The claimed timestamp does not correspond to any supplied chunk discussing system prompts or chatbot framing. This pair must be suspended until the correct transcript evidence is available.",
+    "expected_video_id": null,
+    "expected_timestamp_hint": "video_2 @ ~06:06 (missing)",
+    "is_irrelevant": false,
+    "wrong_retrieval_description": "N/A until source chunk is confirmed."
+  },
+  {
+    "id": "q5_gpt3_parameter_structure",
+    "question": "How are the 175 billion parameters in GPT-3 specifically organized to process data, as broken down in the video?",
+    "expected_answer": "GPT-3's 175 billion weights are organized into just under 28,000 distinct matrices. These matrices fall into eight functional categories: Embedding, Key, Query, Value, Output, Up-projection, Down-projection, and Unembedding. The embedding matrix alone contains about 50,257 tokens across 12,288 dimensions, totaling roughly 617 million parameters.",
+    "expected_video_id": null,
+    "expected_timestamp_hint": "video_2 @ ~08:53",
+    "is_irrelevant": false,
+    "wrong_retrieval_description": "A chunk discussing the general idea of parameters or embedding dimensions without explaining how the weights are structured into functional matrix categories."
+  },
+  {
+    "id": "q1_attention_block_model_disambiguation",
+    "question": "According to the video's explanation of a transformer's architecture, how does the \"attention block\" specifically differentiate the word \"model\" in the phrases \"machine learning model\" and \"fashion model\"?",
+    "expected_answer": "Before the attention block, each token's vector is a fixed lookup from the embedding matrix — it only encodes the isolated meaning of that one word. The attention block then allows the sequence of vectors to 'talk to each other,' updating each vector's values based on the surrounding context. This is how the vector for 'model' gets updated differently depending on whether 'machine learning' or 'fashion' precedes it. This process repeats many times across layers until the essential, context-rich meaning is baked into each vector.",
+    "expected_video_id": null,
+    "expected_timestamp_hint": "But what is a GPT? Visual intro to transformers | 03:03",
+    "is_irrelevant": false,
+    "wrong_retrieval_description": "A chunk explaining static word embeddings, which would incorrectly imply the word 'model' just gets a fixed vector based on its isolated meaning, missing the attention-based contextual update mechanism entirely."
+  },
+  {
+    "id": "q2_attention_vs_mlp",
+    "question": "In the context of data flowing through a transformer, how does the operation of a Multilayer Perceptron (MLP) block contrast with that of an Attention block?",
+    "expected_answer": "In an attention block, vectors in the sequence 'talk to each other' — passing contextual information between tokens to update their values. In a Multilayer Perceptron block, vectors do not interact with each other at all. Instead, each vector independently goes through the same parallel operation, which is likened to running through a long list of questions. Both operations, under the hood, look like 'a giant pile of matrix multiplications.'",
+    "expected_video_id": null,
+    "expected_timestamp_hint": "But what is a GPT? Visual intro to transformers | 03:03",
+    "is_irrelevant": false,
+    "wrong_retrieval_description": "A chunk solely describing the attention block in isolation, which would incorrectly answer that all transformer operations involve vectors passing information to each other."
+  },
+  {
+    "id": "q3_autoregressive_text_generation",
+    "question": "How does a text-generating transformer use single-word prediction to output a longer cohesive passage of text, according to the video's step-by-step breakdown?",
+    "expected_answer": "The model takes an initial snippet of text, produces a probability distribution for the next token, takes a random sample from that distribution, appends the sampled word to the original text, and then repeats the entire process to make a new prediction based on the newly extended text. The video demonstrates this with GPT-2 running on a laptop — producing incoherent output — and then shows that swapping to GPT-3 produces a sensible story, illustrating that this 'sample and append' loop is also what happens when you interact with ChatGPT.",
+    "expected_video_id": null,
+    "expected_timestamp_hint": "But what is a GPT? Visual intro to transformers | 01:44",
+    "is_irrelevant": false,
+    "wrong_retrieval_description": "A chunk explaining how standard classification models work, which would fail to explain the autoregressive 'sample and append' loop required for generating sequences."
+  },
+  {
+    "id": "q4_system_prompt_unverifiable",
+    "question": "How do you turn a basic word-predicting transformer into a chatbot, using what the video describes as a \"system prompt\"?",
+    "expected_answer": "UNVERIFIABLE — No supporting transcript chunk was provided for this QA pair. The claimed SOURCE timestamp does not correspond to any supplied chunk, and no chunk discusses system prompts or chatbot framing. This pair must be suspended until the correct transcript chunk is identified and supplied.",
+    "expected_video_id": null,
+    "expected_timestamp_hint": "But what is a GPT? Visual intro to transformers | 06:06 (missing)",
+    "is_irrelevant": false,
+    "wrong_retrieval_description": "N/A until source chunk is confirmed."
+  },
+  {
+    "id": "q5_gpt3_parameter_structure",
+    "question": "How are the 175 billion parameters in GPT-3 specifically organized to process data, as broken down in the video?",
+    "expected_answer": "GPT-3's 175 billion weights are organized into just under 28,000 distinct matrices. These matrices fall into eight functional categories: Embedding, Key, Query, Value, Output, Up-projection, Down-projection, and Unembedding. The first matrix encountered is the embedding matrix, which has one column per vocabulary token — approximately 50,257 tokens — across 12,288 dimensions, amounting to roughly 617 million weights on its own.",
+    "expected_video_id": null,
+    "expected_timestamp_hint": "But what is a GPT? Visual intro to transformers | 08:53",
+    "is_irrelevant": false,
+    "wrong_retrieval_description": "A chunk discussing the general concept of tunable parameters or the embedding space in isolation, which would provide the wrong level of breakdown for how GPT-3's total weights are actually structured and categorized."
+  }
+
+]

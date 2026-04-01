@@ -1,0 +1,23 @@
+# Secrets
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# ChromaDB binaries & index
+chroma_store/*.pkl
+chroma_store/*.sqlite3
+chroma_store/*/
+
+# Audio/video cache (large binary files)
+audio_cache/*.mp3
+audio_cache/*.wav
+audio_cache/*.m4a
+
+# VS Code
+.vscode/
+
+# Misc
+*.log
